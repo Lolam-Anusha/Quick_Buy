@@ -21,7 +21,7 @@ const swiper = new Swiper(".mySwiper", {
 // collection section
 const getProducts = async () => {
     try {
-        const results = await fetch("products.json");
+        const results = await fetch("https://lolam-anusha.github.io/Quick_Buy/products.json");
         const data = await results.json();
         const products = data.products;
         return products;
@@ -261,7 +261,7 @@ function updateTotal() {
 }
 
 const initApp = () => {
-    fetch("products.json")
+    fetch("https://lolam-anusha.github.io/Quick_Buy/products.json")
     .then((response1)=>response1.json())
     .then((data1)=>{
         listProducts = data1.products;
