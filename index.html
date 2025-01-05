@@ -5,55 +5,402 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick Buy</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="favicon.co" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/png" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <!-- navigation -->
     <header class="header">
         <nav class="navbar">
             <div class="row container d-flex">
                 <div class="logo">
-                    <img src="./images/logo.png" alt="logo" width="180px" height="120px">
+                    <img src="./images/quickbuy_logo.png" width="200px" height="100px" alt="logo">
                 </div>
                 <div class="nav-list d-flex">
-                    <a href="">Home</a>
-                    <a href="">Shop</a>
-                    <a href="">Pages</a>
-                    <a href="">About Us</a>
-                    <a href="">Lookups</a>
+                    <a href="#">Home</a>
+                    <a href="#products-section">Shop</a>
+                    <a href="#">Pages</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Lookups</a>
                     <div class="close">
                         <i class='bx bx-x'></i>
                     </div>
-                    <a href="" class="user-link">Login</a>
+                    <a href="#" class="user-link">Login</a>
                 </div>
                 <div class="icons d-flex">
-                    <div class="icon d-flex"><i class='bx bx-search'></i></div>
-                    <div class="icon d-flex user-icon"><i class='bx bx-user'></i></div>
                     <div class="icon d-flex">
-                        <i class='bx bx-bell'></i>
-                        <span></span>
+                        <i id="searchIcon" class='bx bx-search'></i>
+                        <input type="text" id="searchBar" placeholder="Search products..." />
+                    </div>
+                    <div class="icon d-flex user-icon"><i class='bx bx-user'></i></div>
+                    <div id="icon-cart">
+                        <i class='bx bx-cart'></i>
+                        <!-- <span id="cart-quantity">0</span> -->
+                         <!-- <small class="cart-qty">0</small> -->
                     </div>
                 </div>
+                <!-- Hamburger -->
                 <div class="hamburger">
                     <i class='bx bx-menu'></i>
                 </div>
             </div>
         </nav>
+        <!-- hero -->
         <div class="hero">
             <div class="row container d-flex">
                 <div class="col">
-                    <span class="subtitle"></span>
-                    <h1></h1>
+                    <span class="subtitle">Limited Time only  For Winter</span>
+                    <h1>fash<span class="i">i</span>on</h1>
+                    <p>LOOK YOUR BEST ON YOUR BEST DAY</p>
+                    <button class="btn">Explore Now!</button>   
                 </div>
-                <img width="100%" height="100px" src="./images/banner1.avif" alt="">
+                <img src="./images/e-commerce.png" alt="hero">
             </div>
         </div>
     </header>
+    <!-- product collection -->
+    <section class="section collection">
+        <div class="title">
+            <span>COLLECTION</span>
+            <h2>Our Top Collection</h2>
+        </div>
+        <div class="filters d-flex">
+            <div data-filter="Jewellery">Jewellery</div>
+            <div data-filter="Accessories">Accessories</div>
+            <div data-filter="Dresses">Dresses</div>
+            <div data-filter="Footwear">Footwear</div>
+        </div>
+        <div class="products container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper" id="products">
+                    <!-- <div class="swiper-slide">
+                        <div class="product">
+                            <div class="top d-flex">
+                                <img src="./images/product-1.png" alt="product1">
+                                <div class="icon d-flex">
+                                    <i class='bx bxs-heart'></i>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <h4>Nike Air Men's Hoodie - Imported Hoodie Red</h4>
+                                <div class="d-flex">
+                                    <div class="price">$150</div>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="pagination">
+                <div class="custom-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <!-- new arrival section -->
+    <section class="section new-arrival">
+        <div class="title">
+            <span>New Arrival</span>
+            <h2>Buy Now</h2>
+        </div>
+        <div class="row container">
+            <div class="col col-1">
+                <img src="./images/poster-1.png" alt="">
+                <h3>
+                    Add items to the cart.
+                </h3>
+            </div>
+            <div class="col col-2">
+                <img src="./images/poster-2.png" alt="">
+                <h3>
+                    Enjoy shopping
+                </h3>
+            </div>
+            <div class="col col-3">
+                <img src="./images/poster-3.png" alt="">
+                <h3>
+                    Get discount sales
+                    <span>Discover More</span>
+                </h3>
+            </div>
+        </div>
+    </section>
+    <!-- products section -->
+    <section id="products-section" class="section categories">
+        <div class="title">
+            <span>CATEGORIES</span>
+            <h2>2024 Latest Collection</h2>
+        </div>
+        <div id="listProduct" class="products container">
+            <!-- <div id="item-cart" class="product">
+                <div class="top d-flex">
+                    <img src="./images/product-1.png" alt="">
+                    <div class="icon d-flex">
+                        <i class='bx bxs-heart'></i>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="d-flex">
+                        <h4 class="h2">Nike Air Men's Hoodie - Imported Hoodie Red</h4>
+                        <a href="" id="addCart" class="btn cart-btn">Add to Cart</a>
+                    </div>
+                    <div class="d-flex">
+                        <div id="price" class="price">$150</div>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="button d-flex">
+            <a class="btn loadmore">Load more</a>
+        </div>
+    </section>
 
+    <!-- cart -->
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+            <!-- <div class="cartitem">
+                <div class="cartimage">
+                    <img src="./images/product-1.png" alt="">
+                </div>
+                <div class="name">
+                    Name
+                </div>
+                <div class="totalPrice">
+                    $200
+                </div>
+                <div class="quantity">
+                    <span class="minus"><i class='bx bx-minus'></i></span>
+                    <span>1</span>
+                    <span class="plus"><i class='bx bx-plus' ></i></span>
+                </div>
+            </div> -->
+        </div>
+        <div class="totalAmount">
+            <span>Total:</span> <span id="totalPrice">&#8377;0</span>
+        </div>
+        <div id="btn">
+            <button id="close">CLOSE</button>
+            <button class="checkOut">CHECK OUT</button>
+        </div>
+    </div>
+    <!-- statistical section -->
+    <section class="section statistics">
+        <div class="title">
+            <span>STATS</span>
+            <h2>Our Statistics</h2>
+        </div>
+        <div class="row container">
+            <div class="col">
+                <div class="icon"><i class='bx bxs-check-square' ></i></div>
+                <h3>Easy Order System</h3>
+                <p>Lorem Ipsum is a placeholder text commonly used as a free text.</p>
+            </div>
+            <div class="col">
+                <div class="icon"><i class='bx bxs-user'></i></div>
+                <h3>On Time Delivery</h3>
+                <p>Lorem Ipsum is a placeholder text commonly used as a free text.</p>
+            </div>
+            <div class="col">
+                <div class="icon"><i class='bx bx-rupee' ></i></div>
+                <h3>Money Back Gaurantee</h3>
+                <p>Lorem Ipsum is a placeholder text commonly used as a free text.</p>
+            </div>
+            <div class="col">
+                <div class="icon"><i class='bx bxs-user'></i></div>
+                <h3>24/7 Customer Support</h3>
+                <p>Lorem Ipsum is a placeholder text commonly used as a free text.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="row container">
+            <div class="col">
+                <div class="logo d-flex">
+                    <img src="./images/quickbuy_logo.png" alt="">
+                </div>
+                <p>
+                    Lorem ipsum is a placeholder text <br>
+                    commonly used as a free text.
+                </p>
+                <div class="icons d-flex">
+                    <div class="icon d-flex"><i class='bx bxl-twitter'></i></div>
+                    <div class="icon d-flex"><i class='bx bxl-instagram'></i></div>
+                    <div class="icon d-flex"><i class='bx bxl-youtube'></i></div>
+                </div>
+                <p class="color">
+                    Copyrights © 2024
+                </p>
+            </div>
+            <div class="col">
+                <div>
+                    <h4>Product</h4>
+                    <a href="">Download</a>
+                    <a href="">Download</a>
+                    <a href="">Download</a>
+                    <a href="">Download</a>
+                    <a href="">Download</a>
+                    <a href="">Download</a>
+                </div>
+                <div>
+                    <h4>Category</h4>
+                    <a href="">Download</a>
+                    <a href="">Download</a>
+                    <a href="">Download</a>
+                    <a href="">Download</a>
+                    <a href="">Download</a>
+                    <a href="">Download</a>
+                </div>
+                <div>
+                    <h4>My Account</h4>
+                    <a href="">Download</a>
+                    <a href="">Download</a>
+                    <a href="">Download</a>
+                    <a href="">Download</a>
+                    <a href="">Download</a>
+                    <a href="">Download</a>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <div class="d-flex">
+                        <div class="icon"><i class='bx bxs-map'></i></div>
+                        <span>KPHB, Hyderabad, Telangana</span>
+                    </div>
+                    <div class="d-flex">
+                        <div class="icon"><i class='bx bxs-envelope'></i></div>
+                        <span>quickbuy@gmail.com</span>
+                    </div>
+                    <div class="d-flex">
+                        <div class="icon"><i class='bx bxs-phone'></i></div>
+                        <span>+91 1234567890</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====== Login and Signup Form ====== -->
+    <div class="user-form">
+        <div class="close-form d-flex"><i class="bx bx-x"></i></div>
+        <div class="form-wrapper container">
+          <div class="user login">
+            <div class="img-box">
+              <img src="./images/login-image.jpg" alt="" />
+            </div>
+            <div class="form-box">
+              <div class="top">
+                <p>
+                  Not a member?
+                  <span data-id="#ff0066">Register now</span>
+                </p>
+              </div>
+              <form action="">
+                <div class="form-control">
+                  <h2>Hello Again!</h2>
+                  <p>Welcome back you've been missed.</p>
+                  <input type="text" placeholder="Enter Username" />
+                  <div>
+                    <input type="password" placeholder="Password" />
+                    <div class="icon form-icon">
+                      <!-- <img src="./images/eye.svg" alt="" /> -->
+                    </div>
+                  </div>
+                  <span>Recovery Password</span>
+                  <input type="Submit" value="Login" />
+                </div>
+                <div class="form-control">
+                  <p>Or continue with</p>
+                  <div class="icons">
+                    <div class="icon">
+                        <i class='bx bxl-google'></i>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxl-apple' ></i>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxl-facebook'></i>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxl-youtube' ></i>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+  
+          <!-- Register -->
+          <div class="user signup">
+            <div class="form-box">
+              <div class="top">
+                <p>
+                  Already a member?
+                  <span data-id="#1a1aff">Login now</span>
+                </p>
+              </div>
+              <form action="">
+                <div class="form-control">
+                  <h2>Welcome Quick Buy!</h2>
+                  <p>It's good to have you.</p>
+                  <input type="email" placeholder="Enter Email" />
+                  <div>
+                    <input type="password" placeholder="Password" />
+                    <div class="icon form-icon">
+                      <img src="./images/eye.svg" alt="" />
+                    </div>
+                  </div>
+                  <div>
+                    <input type="password" placeholder="Confirm Password" />
+                    <div class="icon form-icon">
+                      <img src="./images/eye.svg" alt="" />
+                    </div>
+                  </div>
+                  <input type="Submit" value="Register" />
+                </div>
+                <div class="form-control">
+                  <p>Or continue with</p>
+                  <div class="icons">
+                    <div class="icon">
+                        <i class='bx bxl-google'></i>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxl-apple' ></i>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxl-facebook'></i>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxl-youtube' ></i>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="img-box">
+              <img src="./images/register-image.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./js/product.js"></script>

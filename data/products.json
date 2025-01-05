@@ -1,0 +1,116 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "Nike Air Men’s Hoodie -  Imported Hoodie Red",
+            "price": "500",
+            "url": "./images/product-1.png",
+            "category": "Dresses"
+        },
+        {
+            "id": 2,
+            "title": "Armani Frok Ladies -  Imported Fork Blue",
+            "price": "700",
+            "url": "./images/product-2.png",
+            "category": "Dresses"
+        },
+        {
+            "id": 3,
+            "title": "Noise ColorFit Caliber Smartwatch, pearlWhite",
+            "price": "1149",
+            "url": "./images/product-3.png",
+            "category": "Accessories"
+        },
+        {
+            "id": 4,
+            "title": "Stylish yellow glasses",
+            "price": "300",
+            "url": "./images/product-4.png",
+            "category": "Accessories"
+        },
+        {
+            "id": 5,
+            "title": "Flower printed shirt for men",
+            "price": "500",
+            "url": "./images/product-5.png",
+            "category": "Dresses"
+        },
+        {
+            "id": 6,
+            "title": "Wireless Gaming Headset",
+            "price": "1000",
+            "url": "./images/product-6.png",
+            "category": "Accessories"
+        },
+        {
+            "id": 7,
+            "title": "Ladies Leather HandBag-brown",
+            "price": "400",
+            "url": "./images/product-7.png",
+            "category": "Footwear"
+        },
+        {
+            "id": 8,
+            "title": "Nike Running shoes",
+            "price": "1500",
+            "url": "./images/product-8.png",
+            "category": "Footwear"
+        },
+        {
+            "id": 9,
+            "title": "ELLE Women Pointed-Toe Stilettos high heel",
+            "price": "600",
+            "url": "./images/product-9.png",
+            "category": "Footwear"
+        },
+        {
+            "id": 10,
+            "title": "Archer Tech Lab Recurve 500 Wired Optical Gaming Mouse",
+            "price": "200",
+            "url": "./images/product-10.png",
+            "category": "Accessories"
+        },
+        {
+            "id": 11,
+            "title": "Red Wireless Ear Buds",
+            "price": "500",
+            "url": "./images/product-11.png",
+            "category": "Accessories"
+        },
+        {
+            "id": 12,
+            "title": "Stone designed Bangles",
+            "price": "420",
+            "url": "./images/jewellery2.jpg",
+            "category": "Jewellery"
+        },
+        {
+            "id": 13,
+            "title": "Apple Macbook Air A1466 I5 5th Gen Refurbished Laptop",
+            "price": "30000",
+            "url": "./images/product-13.png",
+            "category": "Accessories"
+        },
+        {
+            "id": 14,
+            "title": "Gold plated Traditional bridal pearls Necklace",
+            "price": "2000",
+            "url": "./images/jewellery1.jpg",
+            "category": "Jewellery"
+        },
+        {
+            "id": 15,
+            "title": "Games PC controller",
+            "price": "522",
+            "url": "./images/product-15.png",
+            "category": "Accessories"
+        },
+        {
+            "id": 16,
+            "title": "OnePlus Nord CE Lite 5G  phone",
+            "price": "15000",
+            "url": "./images/product-16.png",
+            "category": "Accessories"
+        }
+    ]
+}
