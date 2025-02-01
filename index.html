@@ -53,11 +53,12 @@
             background-color: rgb(133, 133, 241);
         }
 
-        #guest{
+        #guest {
             margin: auto;
             color: #000;
             font-weight: bold;
         }
+
         @media screen and (max-width: 767px) {
             #form1 {
                 width: 50%
@@ -120,9 +121,8 @@
             const mobileNumber = document.querySelector(".number").value;
 
             if (!userName || !emailId || !password || !confirmPassword || !mobileNumber) {
-                alert("Enter all the details before registering")
-            }
-            else {
+                alert("Enter all the details before registering");
+            } else {
                 if (password !== confirmPassword) {
                     alert("Password is not matching");
                     return;
@@ -132,25 +132,29 @@
                     username: userName,
                     email: emailId,
                     password: password,
-                    mobileNumber: mobileNumber
+                    mobileNumber: mobileNumber,
                 };
 
-                localStorage.setItem("username", JSON.parse(JSON.stringify(registerDetails.username)))
-                localStorage.setItem("email", JSON.parse(JSON.stringify(registerDetails.email)))
-                localStorage.setItem("password", JSON.parse(JSON.stringify(registerDetails.password)))
-                localStorage.setItem("mobileNumber", JSON.parse(JSON.stringify(registerDetails.mobileNumber)))
+                // Store in localStorage
+                localStorage.setItem("username", registerDetails.username);
+                localStorage.setItem("email", registerDetails.email);
+                localStorage.setItem("password", registerDetails.password);
+                localStorage.setItem("mobileNumber", registerDetails.mobileNumber);
 
+                alert("Registration successful!");
             }
-        })
-        registerButton.addEventListener("click", (e) => {
-            e.preventDefault()
-            window.location.href = "login.html";
-        })
+        });
 
-        guestlogin.addEventListener("click", (e)=>{
-            e.preventDefault()
-            window.location.href="home.html"
-        })
+        registerButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "login.html";
+        });
+
+        guestlogin.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "home.html";
+        });
+
     </script>
 </body>
 
