@@ -12,7 +12,7 @@ document.querySelector(".close").onclick = () => {
 //     },
 // });
 
-/* ========== User Form =========== */
+// userform
 const formWrapper = document.querySelector(".form-wrapper");
 const inputs = document.querySelectorAll(".form-box input[type = 'password']");
 const icons = [...document.querySelectorAll(".form-icon")];

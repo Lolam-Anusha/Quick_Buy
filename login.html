@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Buy</title>
+    <link rel="stylesheet" href="favicon.co" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <style>
+        #form {
+            width: 40%;
+            margin: auto;
+            margin-top: 10%;
+
+
+        }
+
+        #fieldset {
+            display: flex;
+            flex-direction: column;
+            padding: 30px 30px;
+            background-color: lightgrey;
+            box-shadow: 5px 5px gray, 10px 10px 10px gray;
+        }
+
+        #username,
+        #password {
+            font-weight: bold;
+        }
+
+        .username,
+        .password {
+            padding: 5px 5px;
+            margin-top: 15px;
+        }
+
+        .username {
+            margin-bottom: 30px;
+        }
+
+        #submit {
+            width: 20%;
+            padding: 5px 5px;
+            margin-top: 20px;
+            margin-left: 37%;
+            background-color: goldenrod;
+        }
+
+        @media screen and (max-width: 767px) {
+            #form {
+                width: 75%;
+                margin-top: 100px;
+            }
+
+            #submit {
+                width: 40%;
+                margin-left: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form id="form">
+        <fieldset id="fieldset">
+            <legend style="font-weight: bold;font-size: x-large;">Login</legend>
+
+            <label id="username">Username:</label>
+            <input type="text" placeholder="Enter your username" class="username" required>
+
+            <label id="password">Password:</label>
+            <input type="password" placeholder="Enter your password" class="password" required>
+
+            <button id="submit">Submit</button>
+        </fieldset>
+    </form>
+    <script>
+        const button = document.querySelector("#submit");
+        userName = localStorage.getItem("username");
+        password = localStorage.getItem("password");
+        const form = document.querySelector("#form");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const username = document.querySelector(".username").value
+            const password1 = document.querySelector(".password").value
+
+            if (userName !== username) {
+                alert("Incorrect Username");
+            }
+            else if (password !== password1) {
+                alert("Incorrect Password")
+            }
+            else {
+                window.location.href = "home.html"
+            }
+        })
+    </script>
+</body>
+
+</html>
