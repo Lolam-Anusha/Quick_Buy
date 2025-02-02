@@ -122,7 +122,8 @@
 
             if (!userName || !emailId || !password || !confirmPassword || !mobileNumber) {
                 alert("Enter all the details before registering");
-            } else {
+            } 
+            else {
                 if (password !== confirmPassword) {
                     alert("Password is not matching");
                     return;
@@ -135,10 +136,10 @@
                     mobileNumber: mobileNumber,
                 };
 
-                localStorage.setItem("username", registerDetails.username);
-                localStorage.setItem("email", registerDetails.email);
-                localStorage.setItem("password", registerDetails.password);
-                localStorage.setItem("mobileNumber", registerDetails.mobileNumber);
+                localStorage.setItem("username", JSON.parse(JSON.stringify(registerDetails.username)));
+                localStorage.setItem("email", JSON.parse(JSON.stringify(registerDetails.email)));
+                localStorage.setItem("password", JSON.parse(JSON.stringify(registerDetails.password)));
+                localStorage.setItem("mobileNumber", JSON.parse(JSON.stringify(registerDetails.mobileNumber)));
 
                 
             }
