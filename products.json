@@ -2,14 +2,14 @@
     "products": [
         {
             "id": 1,
-            "title": "Nike Air Men’s Hoodie -  Imported Hoodie Red T-shirt",
+            "title": "Tshirt Nike Air Men’s Hoodie -  Imported Hoodie Red",
             "price": "500",
             "url": "./images/product-1.png",
             "category": "Dresses"
         },
         {
             "id": 2,
-            "title": "Armani Frok Ladies -  Imported Fork Blue dress",
+            "title": "Dress - Armani Frok Ladies -  Imported Fork Blue",
             "price": "700",
             "url": "./images/product-2.png",
             "category": "Dresses"

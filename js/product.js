@@ -180,77 +180,6 @@ categoriesProducts.addEventListener("click", (event)=>{
     }
 })
 
-// function addToCart(product) {
-//     const existingProduct = cart.find((item) => item.id === product.id);
-
-//     if (existingProduct) {
-//         // If the product already exists in the cart, increase its quantity
-//         existingProduct.quantity++;
-//     } else {
-//         // If the product doesn't exist, add it with a quantity of 1
-//         cart.push({ ...product, quantity: 1 });
-//     }
-//     updateCartUI();
-//     updateTotal()   
-// }
-
-// // Function to update the cart UI
-// function updateCartUI() {
-//     const cartContainer = document.querySelector(".listCart");
-//     cartContainer.innerHTML = ""; // Clear the current cart items
-
-//     cart.forEach((item) => {
-//         cartContainer.insertAdjacentHTML(
-//             "beforeend",
-//             `<div class="cartitem">
-//                 <div class="cartimage">
-//                     <img src="${item.url}" alt="${item.title}">
-//                 </div>
-//                 <div class="name">${item.title}</div>
-//                 <div class="totalPrice">${rupeeSymbol}${item.price * item.quantity}</div>
-//                 <div class="quantity">
-//                     <span class="minus" data-product-id="${item.id}"><i class='bx bx-minus'></i></span>
-//                     <span>${item.quantity}</span>
-//                     <span class="plus" data-product-id="${item.id}"><i class='bx bx-plus'></i></span>
-//                 </div>
-//             </div>`
-//         );
-//     });
-//     // Add event listeners to the "+" and "-" buttons for quantity adjustment
-//     const plusButtons = document.querySelectorAll(".plus");
-//     const minusButtons = document.querySelectorAll(".minus");
-
-//     plusButtons.forEach((button) => {
-//         button.addEventListener("click", (event) => {
-//             const productId = parseInt(event.target.closest(".plus").getAttribute("data-product-id"));
-//             changeQuantity(productId, 1);
-//         });
-//     });
-
-//     minusButtons.forEach((button) => {
-//         button.addEventListener("click", (event) => {
-//             const productId = parseInt(event.target.closest(".minus").getAttribute("data-product-id"));
-//             changeQuantity(productId, -1);
-//         });
-//     });
-// }
-
-// // Function to change the quantity of a product in the cart
-// function changeQuantity(productId, change) {
-//     const product = cart.find((item) => item.id === productId);
-//     if (product) {
-//         product.quantity += change;
-
-//         if (product.quantity <= 0) {
-//             // Remove the product from the cart if the quantity is 0 or less
-//             const index = cart.indexOf(product);
-//             cart.splice(index, 1);
-//         }
-//     }
-//     updateCartUI();
-//     updateTotal()
-// } 
-
 // Add the cart quantity display function
 function updateCartQuantity() {
     const cartQuantityElement = document.querySelector("#cart-quantity");
@@ -382,15 +311,22 @@ function addToCart(product) {
     if (existingProduct) {
         existingProduct.quantity++;
     } else {
-        cart.push({ ...product, quantity: 1 });
+        cart.push({
+            id:product.id,
+            title:product.title,
+            price:product.price,
+            quantity:1,
+            url:product.url
+        });
     }
 
-    
     const button = document.querySelector(`.cart-btn[data-product-id="${product.id}"]`);
     if (button) {
         button.disabled = true;
         button.textContent = 'Added to Cart';
     }
+    // Save cart to localStorage
+    localStorage.setItem('cartItems', JSON.stringify(cart));
 
     updateCartUI();
     updateTotal();
@@ -415,6 +351,8 @@ function changeQuantity(productId, change) {
             }
         }
     }
+    // Save cart to localStorage
+    localStorage.setItem('cartItems', JSON.stringify(cart));
     updateCartUI();
     updateTotal();
     updateCartQuantity();
@@ -441,6 +379,19 @@ function updateTotal() {
 }
 
 const initApp = () => {
+    // Load cart from localStorage
+    const savedCart = localStorage.getItem('cartItems');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCartUI();
+        updateTotal();
+        updateCartQuantity();
+    }
+
+    document.querySelector(".checkOut").addEventListener('click', function() {
+        window.location.href = 'checkout.html';
+    }); 
+
     fetch("https://lolam-anusha.github.io/Quick_Buy/products.json")
     .then((response1)=>response1.json())
     .then((data1)=>{
@@ -513,13 +464,6 @@ function filterProducts(query) {
         // Scroll to products section first
         const productsSection = document.getElementById('products-section');
         productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-        // Then scroll to the first matching product
-        // setTimeout(() => {
-        //     firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        //     firstMatch.classList.add('highlight');
-        //     setTimeout(() => firstMatch.classList.remove('highlight'), 2000);
-        // }, 500);
     }
 }
 
